@@ -1,20 +1,14 @@
-import Header from "./components/header";
-import Sidebar from "./components/Sidebar";
-import VideoContainer from "./components/VideoContainer";
+import { Provider } from "react-redux";
+import MainContainer from "./components/mainContainer";
+import appStore from "./store/appStore";
 
 function App() {
   return (
-    <div>
-      <div className="fixed top-0 left-0 w-full h-16">
-        <Header />
-      </div>
-      <div className="max-w-52 w-full h-full fixed left-0 top-16">
-        <Sidebar />
-      </div>
-      <div className="border mt-16 ml-52 w-full h-full ">
-        <VideoContainer />
-      </div>
-    </div>
+    <>
+      <Provider store={appStore}>
+        <MainContainer />
+      </Provider>
+    </>
   );
 }
 
